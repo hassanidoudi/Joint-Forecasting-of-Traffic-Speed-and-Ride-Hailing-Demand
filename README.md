@@ -57,13 +57,6 @@ Or run `notebooks/08_regenerate_all_models_v8.ipynb` in Colab, which drives the 
 
 Re-running training will **not** reproduce the paper's numbers bit-for-bit. Small differences (typically <2% relative on MAE/RMSE/MAPE across all models and horizons) are expected and are due to **random seed variance** in weight initialization, data loader shuffling, and dropout sampling. This is normal for stochastic gradient-based training and does not indicate an error in the pipeline or a discrepancy with the reported method.
 
-## Open items (not yet resolved — see repository owner before treating as final)
-
-- `evaluate_ha_vs_joint.py`'s last output (now in `archive/ha_vs_joint_results.csv`) was generated against the earlier `model.py`/`model_v2.py` joint checkpoint, predating the final `model_v4` ensemble. It needs to be re-run against the current `output/checkpoints/joint_best.pt` (architecture `model_v4`) before the headline HA-vs-joint comparison number can be cited.
-- There are two checkpoint locations at the moment — a root-level `ckpt/` folder and `output/checkpoints/`. These should be consolidated to avoid ambiguity about which checkpoints are canonical.
-- `paper.tex` is referenced in `REPLICATION_GUIDE.md`'s folder tree but is not currently in this folder.
-## Data
-
 Raw input data is hosted on Google Drive (too large for GitHub, especially the TNP trips file at 1.47GB):
 
 | File | Size | Link |
