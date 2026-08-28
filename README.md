@@ -62,7 +62,18 @@ Re-running training will **not** reproduce the paper's numbers bit-for-bit. Smal
 - `evaluate_ha_vs_joint.py`'s last output (now in `archive/ha_vs_joint_results.csv`) was generated against the earlier `model.py`/`model_v2.py` joint checkpoint, predating the final `model_v4` ensemble. It needs to be re-run against the current `output/checkpoints/joint_best.pt` (architecture `model_v4`) before the headline HA-vs-joint comparison number can be cited.
 - There are two checkpoint locations at the moment — a root-level `ckpt/` folder and `output/checkpoints/`. These should be consolidated to avoid ambiguity about which checkpoints are canonical.
 - `paper.tex` is referenced in `REPLICATION_GUIDE.md`'s folder tree but is not currently in this folder.
+## Data
 
+Raw input data is hosted on Google Drive (too large for GitHub, especially the TNP trips file at 1.47GB):
+
+| File | Size | Link |
+|---|---|---|
+| Boundaries – Community Areas | 23 KB | [Drive link](https://drive.google.com/file/d/1dEo7UuIKe6he_xXF0hcxpMZ_T1cQhofs/view) |
+| Chicago Traffic Tracker | 178 MB | [Drive link](https://drive.google.com/file/d/1yT6Bcxg1_XYDRIa-XawCT76i8YziY_2E/view) |
+| TNP Trips (2025–) | 1.47 GB | [Drive link](https://drive.google.com/file/d/1N-YcDif5Ag1UoJ-EJB9fac3s3UJQ_UIn/view) |
+| Weather (Loop, 2025) | 265 KB | [Drive link](https://drive.google.com/file/d/1pk61ZtGo4mjJzCwcLdFkPpV4IEOYO8rb/view) |
+
+Download all four into the repo root before running `data_preprocessing.py` — `config.py` expects them there by filename.
 ## Citation
 
 If you use this code, please cite the paper (citation to be added upon publication).
